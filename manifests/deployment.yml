@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akstest20211019-960c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akstest20211019-960c"
+  template:
+    metadata:
+      labels:
+        app: "akstest20211019-960c"
+    spec:
+      containers:
+        - name: "akstest20211019-960c"
+          image: "akstest20211019.azurecr.io/akstest20211019"
+          ports:
+          - containerPort: 8080
